@@ -20,7 +20,11 @@ jobs:
       with:
         redis-version: ${{ matrix.redis-version }}          
         
+    - name: Start Go land Redis
+      run : go mod init github.com/my/repo && go get github.com/go-redis/redis/v8
+      
     - name: Checkout code
       uses: actions/checkout@v2
+      
     - name: Test
       run: go test ./...
