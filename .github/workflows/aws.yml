@@ -23,7 +23,12 @@
 #    See the documentation for each action used below for the recommended IAM policies for this IAM user,
 #    and best practices on handling the access key credentials.
 
-on: [push, pull_request]
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - master
+# on: [push, pull_request]
 #on:
 #   release:
 #    types: [created]
