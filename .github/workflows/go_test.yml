@@ -1,6 +1,6 @@
 #on: [push, pull_request]
 on: [push]
-name: Test
+name: Test code
 jobs:
   test:
     strategy:
@@ -28,11 +28,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     
-    - name: Go to dir
-      run: cd app
+  #  - name: Go to dir
+  #    run: cd app
       
-    - name: Build
+    - name: Build app
       run: go build -v .
 
-    - name: Test
+    - name: Test app
       run: ./ervcp
