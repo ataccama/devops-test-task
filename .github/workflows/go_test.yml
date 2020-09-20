@@ -1,0 +1,38 @@
+#on: [push, pull_request]
+on: [push]
+name: Test
+jobs:
+  test:
+    strategy:
+      matrix:
+        go-version: [1.12.x]
+        redis-version: [5]
+#
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: Install Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: ${{ matrix.go-version }}
+
+    - name: Start Redis
+      uses: supercharge/redis-github-action@1.1.0
+      with:
+        redis-version: ${{ matrix.redis-version }}          
+        
+#    - name: Start Go land Redis
+#      run : go get get github.com/go-redis/redis
+#      run : go mod init github.com/my/repo && go get github.com/go-redis/redis/v5
+      
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Go to dir
+      run: go app
+      
+    - name: Build
+      run: go build -v .
+
+    - name: Test
+      run: ./ervcp
