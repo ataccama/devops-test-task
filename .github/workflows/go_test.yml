@@ -36,10 +36,11 @@ jobs:
     - name: List current folder 
       run:  ls -la && cd app && ls -la
       
-    - name: Build app
-#      run: echo "Build app ${{ env.DEPLOY_PACKAGE_NAME }}"
-      run: go build -v .
-
     - name: Test app
+#      run: echo "test app ${{ env.DEPLOY_PACKAGE_NAME }}"
+#      run: go test -v .
+       run: go test -v
+
+#    - name: Test app
 #      run: echo "Test app ${{ env.DEPLOY_PACKAGE_NAME }}"
-      run: ./ervcp
+#      run: ./ervcp
