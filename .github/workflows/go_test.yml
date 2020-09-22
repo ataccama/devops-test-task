@@ -46,7 +46,10 @@ jobs:
       
     - name: Get Go path 
       run: echo ${GOROOT}
-      
+    
+    - name: Get Github workplace 
+      run: echo ${GITHUB_WORKPLACE}
+            
     - name: Test app
 #     run: echo "test app ${{ env.DEPLOY_PACKAGE_NAME }}"
       run: go test -v
