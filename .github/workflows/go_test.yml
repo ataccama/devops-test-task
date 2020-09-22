@@ -35,6 +35,8 @@ jobs:
     
     - name: List current folder 
       run:  ls -la && cd app && ls -la
+      run:  echo ${GOPATH}
+      run:  echo ${GOROOT}
       
     - name: Test app
 #     run: echo "test app ${{ env.DEPLOY_PACKAGE_NAME }}"
