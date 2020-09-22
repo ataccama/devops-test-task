@@ -1,6 +1,10 @@
 #on: [push, pull_request]
 on: [push]
 name: Test code
+env:
+  APPLICATION_NAME	: "ervcp"
+  DEPLOY_PACKAGE_NAME	: "ervcp-deploy-ver-${{ github.sha }}"
+  
 jobs:
   test:
     strategy:
@@ -26,13 +30,17 @@ jobs:
 #      run : go mod init github.com/my/repo && go get github.com/go-redis/redis/v5
       
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v1
     
-    - name: Go to dir
-      run: cd ../app
+    - name: List current folder 
+      run: |
+      	ls -la
+#      	cd ../app
       
     - name: Build app
+      run: echo "Build app ${{ env.DEPLOY_PACKAGE_NAME }}"
       run: go build -v .
 
     - name: Test app
+      run: echo "Test app ${{ env.DEPLOY_PACKAGE_NAME }}"
       run: ./ervcp
