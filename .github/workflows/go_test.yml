@@ -29,8 +29,7 @@ jobs:
       uses: actions/checkout@v2
     
     - name: Go to dir
-      run: ls -la
-#      run: cd app
+      run: cd ../app
       
     - name: Build app
       run: go build -v .
