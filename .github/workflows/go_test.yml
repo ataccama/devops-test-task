@@ -37,8 +37,8 @@ jobs:
       run:  ls -la && cd app && ls -la
       
     - name: Test app
-#      run: echo "test app ${{ env.DEPLOY_PACKAGE_NAME }}"
-       run: go test -v .
+#     run: echo "test app ${{ env.DEPLOY_PACKAGE_NAME }}"
+      run: go test -v
 
 #    - name: Test app
 #      run: echo "Test app ${{ env.DEPLOY_PACKAGE_NAME }}"
