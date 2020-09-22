@@ -1,6 +1,6 @@
 #on: [push, pull_request]
 on: [push]
-name: Test code
+name: Test app code
 
 #env:
 #  APPLICATION_NAME	: "ervcp"
@@ -34,8 +34,7 @@ jobs:
       uses: actions/checkout@v1
     
     - name: List current folder 
-      run:  ls -la
-#      	cd ../app
+      run:  ls -la && cd app && ls -la
       
     - name: Build app
 #      run: echo "Build app ${{ env.DEPLOY_PACKAGE_NAME }}"
