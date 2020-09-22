@@ -38,7 +38,6 @@ jobs:
       
     - name: Test app
 #      run: echo "test app ${{ env.DEPLOY_PACKAGE_NAME }}"
-#      run: go test -v .
        run: go test -v
 
 #    - name: Test app
