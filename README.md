@@ -1,3 +1,6 @@
+<br> Status of the last Deployment:
+<img src="https://github.com/ustas33/devops-test-task/workflows/Deploy to Amazon ECS/badge.svg?branch=master"><br>
+
 # Ataccama DevOps Engineer Technical Challenge
 
 Hello! If you're reading this, you've applied to work with us as a DevOps Engineer. That's great!

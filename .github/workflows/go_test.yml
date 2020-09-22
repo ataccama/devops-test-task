@@ -1,0 +1,44 @@
+#on: [push, pull_request]
+on: [push]
+name: Test app code
+
+env:
+  APPLICATION_NAME	: "ervcp"
+  DEPLOY_PACKAGE_NAME	: "ervcp-deploy-ver-${{ github.sha }}"
+  
+jobs:
+  test:
+    strategy:
+      matrix:
+        go-version: [1.12.x]
+        redis-version: [5]
+#
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: Install Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: ${{ matrix.go-version }}
+
+    - name: Start Redis
+      uses: supercharge/redis-github-action@1.1.0
+      with:
+        redis-version: ${{ matrix.redis-version }}          
+        
+    - name: Start Go lang Redis
+      run : go mod init github.com/ustas33/devops-test-task && go get github.com/go-redis/redis
+      
+    - name: Checkout code
+      uses: actions/checkout@v1
+    
+    - name: List current folder 
+      run: cd app && ls -la & pwd
+         
+    - name: Test app
+      run: go test -v ./...
+#      	echo "test app ${{ env.DEPLOY_PACKAGE_NAME }}"
+#   
+#    - name: Test app
+#      run: echo "Test app ${{ env.DEPLOY_PACKAGE_NAME }}"
+#      run: ./ervcp
