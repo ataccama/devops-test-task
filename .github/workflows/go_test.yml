@@ -21,10 +21,10 @@ jobs:
       with:
         go-version: ${{ matrix.go-version }}
 
-    - name: Start Redis
-      uses: supercharge/redis-github-action@1.1.0
-      with:
-        redis-version: ${{ matrix.redis-version }}          
+#    - name: Start Redis
+#      uses: supercharge/redis-github-action@1.1.0
+#      with:
+#        redis-version: ${{ matrix.redis-version }}          
         
 #    - name: Start Go lang Redis
 #      run : go get get github.com/go-redis/redis
