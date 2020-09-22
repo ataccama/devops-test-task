@@ -5,7 +5,7 @@ name: Test app code
 env:
   APPLICATION_NAME	: "ervcp"
   DEPLOY_PACKAGE_NAME	: "ervcp-deploy-ver-${{ github.sha }}"
-  GITHUB_WORKPLACE	: /home/runner/work/devops-test-task/app
+  GOPATH		: /home/runner/work/devops-test-task/app
   
 jobs:
   test:
