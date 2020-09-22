@@ -49,10 +49,9 @@ jobs:
       run: echo ${GITHUB_WORKPLACE}
             
     - name: Test app
-      run:	|
-      	echo "test app ${{ env.DEPLOY_PACKAGE_NAME }}"
-      	go test -v ./...
-
+      run: go test -v ./...
+#      	echo "test app ${{ env.DEPLOY_PACKAGE_NAME }}"
+#   
 #    - name: Test app
 #      run: echo "Test app ${{ env.DEPLOY_PACKAGE_NAME }}"
 #      run: ./ervcp
