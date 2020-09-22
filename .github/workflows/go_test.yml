@@ -5,7 +5,6 @@ name: Test app code
 env:
   APPLICATION_NAME	: "ervcp"
   DEPLOY_PACKAGE_NAME	: "ervcp-deploy-ver-${{ github.sha }}"
-#  GOPATH		: /home/runner/work/devops-test-task/app
   
 jobs:
   test:
@@ -28,7 +27,6 @@ jobs:
         redis-version: ${{ matrix.redis-version }}          
         
     - name: Start Go lang Redis
-#     run : go get get github.com/go-redis/redis
       run : go mod init github.com/ustas33/devops-test-task && go get github.com/go-redis/redis
       
     - name: Checkout code
@@ -36,10 +34,7 @@ jobs:
     
     - name: List current folder 
       run: cd app && ls -la & pwd
-
-    - name: Get Github workplace 
-      run: echo ${GITHUB_WORKPLACE}
-            
+         
     - name: Test app
       run: go test -v ./...
 #      	echo "test app ${{ env.DEPLOY_PACKAGE_NAME }}"
