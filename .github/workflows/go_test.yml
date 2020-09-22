@@ -49,7 +49,7 @@ jobs:
       run: echo ${GITHUB_WORKPLACE}
             
     - name: Test app
-      run: |
+      run:	|
       	echo "test app ${{ env.DEPLOY_PACKAGE_NAME }}"
       	go test -v ./...
 
