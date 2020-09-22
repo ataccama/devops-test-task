@@ -34,12 +34,18 @@ jobs:
       uses: actions/checkout@v1
     
     - name: List current folder 
-      run:  |
-      	pwd
-      	cd app && ls -la
-      	pwd
-      	echo ${GOPATH}
-      	echo ${GOROOT}
+      run: cd app && ls -la
+#      	pwd
+#      	cd app && ls -la
+#      	pwd
+#      	echo ${GOPATH}
+#      	echo ${GOROOT}
+
+    - name: Get Go path 
+      run: echo ${GOPATH}
+      
+    - name: Get Go path 
+      run: echo ${GOROOT}
       
     - name: Test app
 #     run: echo "test app ${{ env.DEPLOY_PACKAGE_NAME }}"
