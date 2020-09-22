@@ -29,7 +29,7 @@ jobs:
         
     - name: Start Go lang Redis
 #     run : go get get github.com/go-redis/redis
-      run : go mod init github.com/ustas33/devops-test-task && go get github.com/go-redis/redis/v5
+      run : go mod init github.com/ustas33/devops-test-task && go get github.com/go-redis/redis
       
     - name: Checkout code
       uses: actions/checkout@v1
