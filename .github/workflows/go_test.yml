@@ -5,6 +5,7 @@ name: Test app code
 env:
   APPLICATION_NAME	: "ervcp"
   DEPLOY_PACKAGE_NAME	: "ervcp-deploy-ver-${{ github.sha }}"
+  GITHUB_WORKPLACE	: /home/runner/work/devops-test-task/app
   
 jobs:
   test:
@@ -36,15 +37,6 @@ jobs:
     - name: List current folder 
       run: cd app && ls -la & pwd
 
-    - name: Get home 
-      run: echo ${HOME}
-      
-    - name: Get Go path 
-      run: echo ${GOPATH}
-      
-    - name: Get Go root 
-      run: echo ${GOROOT}
-    
     - name: Get Github workplace 
       run: echo ${GITHUB_WORKPLACE}
             
