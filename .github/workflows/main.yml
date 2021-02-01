@@ -46,8 +46,6 @@ jobs:
         run: go build -o ervcp /home/runner/work/devops-test-task/devops-test-task/app/main.go 
       - name: Download a Build Artifact
         uses: actions/download-artifact@v2.0.8
-        with:
-          name: ervcp
  
 
 
