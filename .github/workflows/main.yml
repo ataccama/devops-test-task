@@ -38,6 +38,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
+      - name: cd dir
+        run: cd /devops-test-task/app/
+      
       - name: Build
         run: go build .
     
