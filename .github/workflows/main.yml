@@ -39,7 +39,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Build
-				env:
+	env:
           ERVCP_PORT: "80"
           ERVCP_DB_HOST: "localhost"
           ERVCP_DB_PORT: "6380"
