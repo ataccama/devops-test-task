@@ -39,7 +39,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: cd dir
-        run: cd /home/runner/work/devops-test-task/devops-test-task/app
+        run: cd /home/runner/work/devops-test-task/app/
       
       - name: Build
         run: go build .
