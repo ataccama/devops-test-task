@@ -40,12 +40,6 @@ jobs:
       
       - name: Build
         run: go build .
-	env:        
-          ERVCP_PORT: "80"
-          ERVCP_DB_HOST: "localhost"
-          ERVCP_DB_PORT: "6380"
-          ERVCP_DB_PW: "Neverwritepasswordhere123"
-
     
 
 
